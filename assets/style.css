@@ -1,0 +1,720 @@
+/*
+dev.ohheybrian.org
+Brian E. Bennett - 2014
+Fork at http://bennettscience.github.io
+License: GNU General Public License
+
+
+/* ----------------------------------------------------------- */
+/* Reset
+-------------------------------------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+  color:#333332;
+  /* height: 100%; */
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+
+  -ms-text-size-adjust: 100%;
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+blockquote p {
+  font-family:'Open Sans',sans-serif;
+  font-weight: 400;
+  font-size:28px;
+  color: #565656 !important;
+  text-align: center;
+}
+.pullquote {
+    margin: 45px -100px;
+    border: 0;
+    text-align:center;
+    font-family:'Open Sans', sans-serif !important;
+    font-size:28px;
+    font-size:2.8rem;
+    font-weight: 700;
+}
+
+code,
+kbd,
+tt,
+var {
+  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+small {
+  font-size: 75%;
+}
+big {
+  font-size: 125%;
+}
+figure {
+  margin: 0;
+}
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+th {
+  font-weight: bold;
+}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+
+  vertical-align: baseline;
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+
+}
+button,
+input {
+  line-height: normal;
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+
+  *overflow: visible;
+  /* Corrects inner spacing displayed oddly in IE6/7 */
+
+  -webkit-appearance: button;
+  /* Corrects inability to style clickable 'input' types in iOS */
+
+  font-size: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 1.12em 1.5em 1em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+
+  border: 0;
+  padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+  color: #888888;
+  border: 1px solid #dddddd;
+  font-family:'Merriweather', sans-serif;
+  font-weight:300;
+  width:100%;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  color: #101010;
+}
+input[type=text],
+input[type=email] {
+  padding: 3px;
+}
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+
+  height:65px;
+}
+/* ------------------------- STYLES ------------------------------------- */
+body,
+button,
+input,
+select {
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  font-family: serif;
+  line-height: 30px;
+  font-size: 24px;
+  font-size: 1.8rem;
+  height:100%;
+}
+
+/* -------------------------- TYPOGRAPHY ------------------------------------ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  clear: both;
+  font-family: "Arvo", Georgia, serif;
+}
+h1 {
+  line-height: 71.03999999999999px;
+  font-size: 48px;
+  font-size: 4.8rem;
+}
+h2 {
+  line-height: 50.32px;
+  font-size: 34px;
+  font-size: 3.4rem;
+}
+h3 {
+  line-height: 41.44px;
+  font-size: 28px;
+  font-size: 2.8rem;
+}
+h4 {
+  line-height: 26.64px;
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+hr {
+    height:0;
+    max-width:250px;
+    margin:1.5em auto;
+    border-top:1px solid rgba(0,0,0,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+p {
+  margin-bottom: 1.5em;
+}
+ul,
+ol {
+  margin: 0 0 1.5em 3em;
+}
+ul {
+  list-style: none;
+  /* float: left; */
+}
+ol {
+  list-style: decimal;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+li {
+  font-family:'Merriweather',serif;
+  font-weight:300;
+  font-size:18px;
+  font-size:1.8rem;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0 1.5em 1.5em;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+blockquote {
+  margin: 0 1.5em;
+}
+address {
+  margin: 0 0 1.5em;
+}
+a {
+  color: #007998;
+  -webkit-transition: color 0.25s ease-in-out;
+  -moz-transition: color 0.25s ease-in-out;
+  -o-transition: color 0.25s ease-in-out;
+  -ms-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+  text-decoration: none;
+}
+a:focus,
+a:active {
+  color: rgba(0, 121, 152, 0.5);
+}
+/* ------------ ALIGNMENT ----------- */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ------ SITE STYLES -------- */
+header {
+  width:100%;
+  height:55px;
+  display:block;
+}
+body {
+  min-height:100%;
+  -webkit-overflow-scrolling: touch;
+  max-width: 80%;
+  margin:0 auto;
+}
+
+body #primary {
+  margin:0 auto;
+  position:relative;
+}
+body #content {
+  height: auto;
+  width: 100%;
+  margin:0 auto;
+}
+#blog-title {
+  position: absolute;
+  left:10%;
+  top:10px;
+  text-transform:uppercase;
+  font-family: 'Open Sans','Helvetica',sans-serif;
+  color:#404040;
+  font-weight:700;
+}
+#content h1 {
+  font-family:'Merriweather','Helvetica', sans-serif;
+}
+.full {
+  height:100%;
+  width:100%;
+}
+.post#about {
+  background-image:url('https://farm4.staticflickr.com/3936/15274102588_52b9776eab_o.png');
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.post#connect {
+  background-image:url('https://farm8.staticflickr.com/7236/7032996363_58ffef4321_o.jpg');
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size:cover; 
+}
+.post#blog {
+  background-image:url('https://farm6.staticflickr.com/5509/9952840873_540168feb8_o.jpg');
+  background-position: center center;
+  background-repeat:no-repeat;
+  background-size:cover; 
+}
+article {
+  /* background: transparent; */
+  padding:0;
+  display: block;
+  opacity:1;
+  height:100%;
+}
+.post {
+  position: inherit;
+  max-height: 400px;
+  height: 215px;
+}
+article .bg-clear {
+  position:relative;
+  height: inherit;
+  width: inherit;
+  background:rgba(235,235,235,0.60);
+}
+article .the-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+article .the-content p {
+  color:#574257;
+  line-height:1.25;
+}
+.title {
+  display:block;
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+  transform: translateY(-10%);
+  -webkit-transform: translateY(-10%);
+  font-size: 40px;
+  font-size:4rem;
+  font-weight:700;
+  text-align: center;
+}
+article .title a {
+  text-decoration:none;
+  color: #404040;
+  line-height:1.25;
+  font-family:'Open Sans','Arial',sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+}
+article .title a:hover {
+  color:#3849A6;
+}
+article .date {
+  width:inherit;
+  height:auto;
+  position:relative;
+  top: 22%;
+}
+article .date p {
+  font-size: 18px;
+  color: #404040;
+  font-family:'Merriweather','Helvetica',sans-serif;
+  font-weight:300;
+  text-align:center;
+  margin:0;
+  padding:10px;
+}
+article .post-snippet {
+  display:block;
+  max-width: 80%;
+  height: auto;
+  position: relative;
+  top:10%;
+  margin:0 auto;
+  text-align: center;
+}
+article .post-snippet p {
+  font-size:30px;
+  font-size:3rem;
+  font-family:'Open sans','Arial', sans-serif;
+  font-weight:300;
+  text-transform: none;
+  margin:0;
+}
+article .meta {
+  display: block; 
+  max-width:inherit;
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+  text-align: center;
+}
+article .meta a {
+  color:#404040;
+  font-family:'Merriweather','Helvetica',sans-serif;
+  font-weight:300;
+}
+article .meta ul {
+  margin: 0 !important;
+}
+article .meta p {
+  display:inline;
+  color:#404040;
+  font-family:'Merriweather','Helvetica',sans-serif;
+  font-weight:300;
+  font-size:21px;
+  margin:0;
+}
+.meta {
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+}
+.meta a {
+  color: #888888;
+  text-decoration: none;
+}
+.post-container {
+  position:relative;
+  height:auto;
+}
+.featured {
+  height:350px;
+  width:100%;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center center;
+  position: relative;
+  margin-bottom:1.5em;
+}
+.featured#about {
+  background-image:url('https://farm4.staticflickr.com/3936/15274102588_52b9776eab_o.png');
+}
+.featured#connect {
+  background-image:url('https://farm8.staticflickr.com/7236/7032996363_58ffef4321_o.jpg');
+}
+.featured .title {
+  max-width:80%;
+  position: relative;
+  top:50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  background:rgba(235,235,235,0.5);
+  padding:10px 3px;
+}
+.featured .title h1 {
+  text-decoration:none;
+  color: #404040;
+  line-height:1.25;
+  font-family:'Open Sans','Arial',sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.the-post {
+  width:100%;
+  background: #fff;
+  height:auto;
+}
+.the-post .content-container {
+  max-width:80%
+  margin:0 auto;
+  padding:0 10px;
+  height: inherit;
+}
+.the-post .content-container p {
+  font-family:'Merriweather', sans-serif;
+  font-size:18px;
+  font-size: 1.8rem;
+  font-weight:300;
+  color:#000;
+}
+#networks {
+  width:100%;
+}
+#networks ul {
+  display:table;
+  list-style-type: none;
+  width:90%;
+  margin:0 auto;
+  padding:0;
+}
+#networks ul li {
+  display:table-cell;
+}
+#contact-form {
+  width:100%;
+  margin-top:25px;
+}
+.errorbox-good {
+  font-family:'Open Sans', 'Helvetica', 'Arial',sans-serif;
+  width:80%; 
+}
+#contact-form input[type="submit"] {
+  width:250px;
+  font-family:'Open Sans', 'Helvetica','Arial',sans-serif;
+  color:#eee;
+  font-weight:300;
+  border-radius: 5px;
+  border:none;
+  background-color:#7489fc;
+  margin-bottom:30px;
+  transition: box-shadow 0.25s;
+  cursor:pointer;
+}
+
+#contact-form input[type="submit"]:hover {
+  box-shadow:0 0 10px 5px #435ffa;
+}
+
+/* ----- MEDIA QUERIES ---------- */
+@media screen and (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  article {
+    opacity:1;
+    height:auto;
+  }
+  article .title {
+    position: relative;
+  }
+  article .title a {
+    font-size:2.9rem;
+    font-size:29px;
+  }
+  article .post a {
+  text-decoration:none;
+  color: #3849A6 !important;
+  line-height:1.25;
+  font-family:'Open Sans',sans-serif;
+  font-weight:800;
+  text-transform:uppercase;
+  }
+  article .post-snippet p {
+    font-size: 2.1rem;
+    font-size: 21px;
+  }
+  .post-container .featured .title {
+    width:auto;
+    overflow:hidden;
+    font-size:1.8rem;
+  }
+  #networks ul li {
+    display:table;
+  }
+  #contact-form input[type="submit"] {
+    transition: none !important;
+  }
+}
