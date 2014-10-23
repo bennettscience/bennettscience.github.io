@@ -1,0 +1,123 @@
+<!doctype html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/jquery.mousewheel.js"></script>
+        <script src="js/bigtext.js"></script>
+	<script src="js/backstretch.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+            <div id="headline">
+                <h1>don't be a</h1>
+                <h1>faceless</h1>
+                <h1>robot</h1>
+            </div>
+            <div id="page-wrap">
+                <article class="post">
+			<div class="title"><h1>Zoom Zoom Zoom</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Using a zoom in your video not only helps focus your viewer's attention, it can give some added flair to your presentation.</p>
+					<p>We need to remember that <b>50%</b> of web traffic comes from mobile devices. Have you watched your videos on your phone yet? It'll help you identify places where a zoom could help out.</p>
+				</div>
+				<div class="media">
+					<iframe width="640" height="480" src="http://www.youtube.com/embed/uCvpFgTwZpE?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+                </article>
+                <article class="post">
+			<div class="title"><h1>Feedback</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Videos can be more than direct instruction. Currently, how do you give feedback on assignments?</p>
+					<p>It takes a lot of time, right?</p>
+					<p>Video can be used to give direct feedback to the student because it communicates areas of improvement more effectively than written feedback alone.</p>	
+				</div>
+				<div class="media">
+					
+				</div>
+			</div>
+                </article>
+                <article class="post">
+			<div class="title"><h1>Introduce Yourself</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Teachers have a unique opportunity each year - you get new students!</p>
+					<p>While great, it takes time to get to know one another. Consider recording a short "this is me" video to give to your students to introduce yourself. It doesn't have to be fancy, but it starts the relationship-building process immediately.</p>
+				</div>
+				<div class="media">
+					
+				</div>
+			</div>
+                </article>
+                <article class="post">
+			<div class="title"><h1>No Broken Records</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Have you ever repeated yourself, answering the same question multiple times?</p>
+					<p>If you've got an iPad, you can use a whiteboard app to record the answer <i>once</i>, and then share it out so other students can benefit.</p>
+					<p>Make sure you record the discussion as well! Don't stop with the answer. Hearing follow-up conversation can help clarify confusing points.</p>
+				</div>
+				<div class="media">
+					
+				</div>
+			</div>
+                </article>
+		<article class="post">
+			<div class="title"><h1>Absence, Schmabsence</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Plannning for an absence is harder work than planning for a normal class. How do you leave clear instructions?</p>
+					<p>With a video, students get the instructions from <b>you</b>, not from an explanation sheet. They hear your voice, your inflection, and your description as they normally would.</p>
+					<p>After a five-minute description, they can jump right into working, which means the time is more productive.</p>
+				</div>
+				<div class="media">
+					
+				</div>
+			</div>
+		</article>
+                <article class="post">
+			<div class="title"><h1>Work the Camera</h1></div>
+			<div class="content">
+				<div class="text">
+					<p>Imagine sitting in a room, watching a PowerPoint, and listening to a voice speak from the speakers. Eerie, right?</p>
+					<p>Including webcam video of yourself while you're teaching is an easy way to continue to build relationships with your students. They want to learn from their teacher, so make sure they can see you!</p>
+				</div>
+				<div class="media">
+					
+				</div>
+			</div>
+		</article>
+            </div>
+        <script>
+		// Lines up block text for the title based on the container width
+		// Sourced from https://github.com/zachleat/BigText
+        $('#headline').bigtext();
+	
+		// Allows for fixed background images on iOS7+
+		// Sourced from http://srobbin.com/jquery-plugins/backstretch/
+	$.backstretch('robots.png');
+
+		// Wraps HTML elements in a table row layout for horizontal scrolling
+	$(document).ready(function() {
+		$("#page-wrap").wrapInner("<table cellspacing='30'><tr>");
+		$(".post").wrap("<td></td>");
+		$("body").mousewheel(function(event, delta) {
+			this.scrollLeft -= (delta * 30);
+			event.preventDefault();
+		});   
+	});
+	
+		// Controls display of content block and scrolling
+	$(".title").click(function() {
+		var clickedPost = $(this).parent();
+		$('.post').not($(this).parent()).removeClass('active');
+		clickedPost.toggleClass('active', 500);
+		$('#headline').slideToggle(500);
+		//$('html, body').animate({scrollLeft: clickedPost.offset().left},500);
+	});
+	
+        </script>
+    </body>
+</html>
