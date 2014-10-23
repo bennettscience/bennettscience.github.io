@@ -87,6 +87,10 @@ h2 {
   letter-spacing: -1px; 
   color: #333; 
 }
+/* This overrides certain elements of the backstretch.js script
+ * because my image is't a high enough resolution.
+ * If you're using a hi-res image, you can remove this block.
+ */
 .backstretch img {
   width:681px !important;
   height:auto !important;
