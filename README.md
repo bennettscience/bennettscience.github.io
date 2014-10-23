@@ -7,4 +7,4 @@ All content in this repo is under a [MIT License](http://opensource.org/licenses
 
 2014
 ===
-[Online Learning Consortium 2014 Annual Conference](http://bbennett.github.io/olc)
+[Online Learning Consortium 2014 Annual Conference](http://bennettscience.github.io/olc)
