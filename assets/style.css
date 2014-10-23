@@ -455,14 +455,8 @@ body #content {
   background-repeat:no-repeat;
   background-size:cover;
 }
-.post#connect {
-  background-image:url('https://farm8.staticflickr.com/7236/7032996363_58ffef4321_o.jpg');
-  background-position: center center;
-  background-repeat:no-repeat;
-  background-size:cover; 
-}
-.post#blog {
-  background-image:url('https://farm6.staticflickr.com/5509/9952840873_540168feb8_o.jpg');
+.post#olc {
+  background-image:url('https://github.com/bennettscience/bennettscience.github.io/blob/master/olc/robots.png');
   background-position: center center;
   background-repeat:no-repeat;
   background-size:cover; 
