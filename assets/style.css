@@ -634,42 +634,11 @@ article .meta p {
   font-weight:300;
   color:#000;
 }
-#networks {
+.footer {
   width:100%;
-}
-#networks ul {
-  display:table;
-  list-style-type: none;
-  width:90%;
-  margin:0 auto;
-  padding:0;
-}
-#networks ul li {
-  display:table-cell;
-}
-#contact-form {
-  width:100%;
-  margin-top:25px;
-}
-.errorbox-good {
-  font-family:'Open Sans', 'Helvetica', 'Arial',sans-serif;
-  width:80%; 
-}
-#contact-form input[type="submit"] {
-  width:250px;
-  font-family:'Open Sans', 'Helvetica','Arial',sans-serif;
-  color:#eee;
-  font-weight:300;
-  border-radius: 5px;
-  border:none;
-  background-color:#7489fc;
-  margin-bottom:30px;
-  transition: box-shadow 0.25s;
-  cursor:pointer;
-}
-
-#contact-form input[type="submit"]:hover {
-  box-shadow:0 0 10px 5px #435ffa;
+  height:40px;
+  z-index:10;
+  text-align: center;
 }
 
 /* ----- MEDIA QUERIES ---------- */
