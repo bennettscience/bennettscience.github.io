@@ -433,6 +433,9 @@ body #content {
   width: 100%;
   margin:0 auto;
 }
+#github {
+  display:none;
+}
 #blog-title {
   position: absolute;
   left:10%;
@@ -635,7 +638,7 @@ article .meta p {
   bottom:10px;
 }
 .footer img {
-  height:45px;
+  height:35px;
   width:auto;
 }
 .footer img:hover {
@@ -675,10 +678,14 @@ article .meta p {
     overflow:hidden;
     font-size:1.8rem;
   }
-  #networks ul li {
-    display:table;
+  .footer {
+    display:none;
   }
-  #contact-form input[type="submit"] {
-    transition: none !important;
+  #github {
+    display:block;
+    height:35px;
+    float:right;
+    position:relative;
+    top:10px;
   }
 }
