@@ -434,7 +434,11 @@ body #content {
   margin:0 auto;
 }
 #github {
-  display:none;
+  display:block;
+    height:35px;
+    float:right;
+    position:relative;
+    top:10px;
 }
 #blog-title {
   position: absolute;
@@ -627,16 +631,6 @@ article .meta p {
   font-weight:300;
   color:#000;
 }
-.footer {
-  position:fixed;
-  width:80%;
-  height:auto;
-  z-index:10;
-  text-align: center;
-  font-family:'Open Sans', sans-serif;
-  margin:0;
-  bottom:10px;
-}
 .footer img {
   height:35px;
   width:auto;
@@ -677,15 +671,5 @@ article .meta p {
     width:auto;
     overflow:hidden;
     font-size:1.8rem;
-  }
-  .footer {
-    display:none;
-  }
-  #github {
-    display:block;
-    height:35px;
-    float:right;
-    position:relative;
-    top:10px;
   }
 }
