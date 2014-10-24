@@ -416,6 +416,7 @@ header {
   width:100%;
   height:55px;
   display:block;
+  
 }
 body {
   min-height:100%;
@@ -456,14 +457,7 @@ body #content {
   height:100%;
   width:100%;
 }
-.post#about {
-  background-image:url('https://farm4.staticflickr.com/3936/15274102588_52b9776eab_o.png');
-  background-position: center center;
-  background-repeat:no-repeat;
-  background-size:cover;
-}
-.post#olc {
-  background-image:url('http://www.brianbennett.org/images/robots.png');
+.post{
   background-position: center center;
   background-repeat:no-repeat;
   background-size:cover; 
