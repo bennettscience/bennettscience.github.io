@@ -102,3 +102,9 @@ h2 {
   top:0 !important;
   left:25% !important;
 }
+.tooltip {
+  position:fixed;
+  bottom:25px;
+  width:100%;
+  text-align:center;
+}
