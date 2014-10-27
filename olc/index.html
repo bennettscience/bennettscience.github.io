@@ -140,6 +140,13 @@
 		$('#headline').slideToggle(500);
 		//$('html, body').animate({scrollLeft: clickedPost.offset().left},500);
 	});
+	$(window).bind("scroll",function() {
+	    if ($(this).scrollLeft() > 10) {
+		$(".tooltip").fadeOut();
+	    } else {
+		$(".tooltip").fadeIn();
+	    }
+	})
 	
         </script>
     </body>
