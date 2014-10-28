@@ -32,7 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<div id="player"></div>
+				<div id="player1"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -48,7 +48,7 @@
 				<div class="media">
 				    <iframe class="tscplayer_inline embeddedObject" name="tsc_player" scrolling="no" frameborder="0" type="text/html" style="overflow:hidden;" src="http://www.screencast.com/users/TechSmithEDU/folders/Video Examples/media/83e269cf-029a-469d-aafe-4074c54905ad/embed" height="446" width="640" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 				</div>
-				<div id="player2"></div>
+				<!-- <div id="player2"></div> -->
 			</div>
                 </article>
                 <article class="post">
@@ -105,15 +105,18 @@
 	    <div class="tooltip">
 		<i>Scroll up and down on a computer to navigate, swipe on a touch device.</i>
 	    </div>
-        <script>	    
+        <script>
+	// Array of all videos to include on the page
 	var playerInfoList = [
-			      {id:'player',videoId:'5mOl4Q0_JBo'},
+			      {id:'player1',videoId:'5mOl4Q0_JBo'},
+			      {id:'player2',videoId:'VOID'},
 			      {id:'player3',videoId:'JdFou87ty6I'},
 			      {id:'player4',videoId:'3djvdn6hGYI'},
 			      {id:'player5',videoId:'RYnRxxgjA30'},
 			      {id:'player6',videoId:'EqPQXpTJumQ'}
 	];
 	
+	// Check for information stored in the array
 	function onYouTubeIframeAPIReady() {
 	    if (typeof playerInfoList === 'undefined') {
 		return;
@@ -122,21 +125,13 @@
 		var curplayer = createPlayer(playerInfoList[i]);
 	    }
 	}
+	
+	// If there is data stored, create a new YouTube player with the API and stored data
 	function createPlayer(playerInfo) {
 	    return new YT.Player(playerInfo.id, {
 		videoId: playerInfo.videoId
 	    });
 	}
-	
-	// Initialize the YouTube API for video player control
-	/*function onYouTubeIframeAPIReady() {
-	    player = new YT.Player('player',{
-		videoId: '5mOl4Q0_JBo'
-	    });
-	    player2 = new YT.Player('player2',{
-		videoId: 'JdFou87ty6I'
-	    })
-	}*/
 	
 	// Lines up block text for the title based on the container width
 	// Sourced from https://github.com/zachleat/BigText
@@ -161,10 +156,15 @@
 	    var clickedPost = $(this).parent();
 	    $('.post').not($(this).parent()).removeClass('active');
 	    clickedPost.toggleClass('active', 500);
-	    if (clickedPost.hasClass('active')) {
-		player.playVideo();
-	    }
+	    playMedia();
 	});
+	
+	function playMedia() {
+	    var videoId = playerInfoList.id;
+	    var el = $('#player' + id);
+	    console.log(id);
+	    //if (el.size() == 0) {}
+	}
 	
 	// Show the navigation tooltip when scrolled all the way to the left
 	// Automatically hides once the user begins scrolling
