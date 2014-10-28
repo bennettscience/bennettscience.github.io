@@ -32,9 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<div class="media">
-				    <iframe id="player" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?rel=0&enablejsapi=1&wmode=transparent" frameborder="0" allowfullscreen></iframe>
-				</div>
+				<iframe id="player" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?rel=0&enablejsapi=1&wmode=transparent" frameborder="0" allowfullscreen></iframe>
 			</div>
                 </article>
                 <article class="post">
@@ -145,16 +143,20 @@
 		var clickedPost = $(this).parent();
 		$('.post').not($(this).parent()).removeClass('active');
 		clickedPost.toggleClass('active', 500);
-		videoPlayer;
+		videoPlayer();
 	});
 	
 	// Test the classes on the post and play or pause the video accordingly
 	function videoPlayer() {
-	    if ($('.post').hasClass('active')) {
+	    
+	    // This block does not work as expected
+	    /*if ($('.post').hasClass('active')) {
 		player.playVideo();
 	    } else {
 		player.pauseVideo();
-	    }
+	    }*/
+	    
+	    player.playVideo();
 	}
 	
 	// Show the navigation tooltip when scrolled all the way to the left
