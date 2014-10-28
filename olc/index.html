@@ -32,7 +32,7 @@
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
 				<div class="media">
-				    <iframe width="640" height="480" src="//www.youtube.com/embed/5mOl4Q0_JBo?rel=0" frameborder="0" allowfullscreen></iframe>
+				    <iframe id="player" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?enablejsapi=1?rel=0&amp;wmode=transparent&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
                 </article>
@@ -114,6 +114,18 @@
 		<i>Scroll up and down on a computer to navigate, swipe on a touch device.</i>
 	    </div>
         <script>
+		// Initialize the YouTube API for video player control
+	var tag = document.createElement('script');
+	tag.src = "http://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	console.log('script ready');
+	
+	var player;
+	function onYouTubeIframeAPIReady() {
+	    player = new YT.Player('player');
+	};
+	
 		// Lines up block text for the title based on the container width
 		// Sourced from https://github.com/zachleat/BigText
         $('#headline').bigtext();
@@ -131,15 +143,22 @@
 			event.preventDefault();
 		});   
 	});
+		// Autoplay or stop YouTube video when the div is hidden
 	
 		// Controls display of content block and scrolling
 	$(".title").click(function() {
 		var clickedPost = $(this).parent();
 		$('.post').not($(this).parent()).removeClass('active');
 		clickedPost.toggleClass('active', 500);
-		$('#headline').slideToggle(500);
-		//$('html, body').animate({scrollLeft: clickedPost.offset().left},500);
 	});
+	
+	if ($('.post').is('.active')) {
+	    player.playVideo();
+	} else {
+	    player.pauseVideo();
+	};
+		// Show the navigation tooltip when scrolled all the way to the left
+		// Automatically hides once the user begins scrolling
 	$(window).bind("scroll",function() {
 	    if ($(this).scrollLeft() > 10) {
 		$(".tooltip").fadeOut();
