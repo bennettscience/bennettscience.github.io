@@ -32,7 +32,6 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<!-- <iframe id="frame1" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?rel=0&enablejsapi=1&wmode=transparent" frameborder="0" allowfullscreen></iframe>-->
 				<div id="player"></div>
 			</div>
                 </article>
@@ -49,7 +48,7 @@
 				<div class="media">
 				    <iframe class="tscplayer_inline embeddedObject" name="tsc_player" scrolling="no" frameborder="0" type="text/html" style="overflow:hidden;" src="http://www.screencast.com/users/TechSmithEDU/folders/Video Examples/media/83e269cf-029a-469d-aafe-4074c54905ad/embed" height="446" width="640" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 				</div>
-				<div id="frame2"></div>
+				<div id="player2"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -61,8 +60,7 @@
 					<h2>From the creator:</h2>
 					<i>When I was a student in this class, I was very bored and I had to memorize everything... So I decided to studied more about how to teach more effective and experience it in the classroom. I believe that this course (Aesthetics and Art History) is the most important course for freshman in architecture school and it should be blended in order to be more effective. My students and I would have time in class to discuss and debate together instead of been passive and just listening.</i>
 				</div>
-				<!-- <iframe id="player2" width="640" height="360" src="http://www.youtube.com/embed/JdFou87ty6I?rel=0&enablejsapi=1&wmode=transparent" frameborder="0" allowfullscreen></iframe>-->
-				<div id="player2"></div>
+				<div id="player3"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -75,10 +73,7 @@
 					<h2>From the creator:</h2>
 					<i>I use videos so people can see and hear the human side of the tech department, because I want teachers to develop a connection with me, not a user manual, and so I can model the type of digital media creation I want my teachers to explore.</i>
 				</div>
-				<div class="media">
-				    <iframe width="640" height="360" src="//www.youtube.com/embed/3djvdn6hGYI?rel=0" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div id="frame4"></div>
+				<div id="player4"></div>
 			</div>
                 </article>
 		<article class="post">
@@ -91,10 +86,7 @@
 					<h2>From the creator:</h2>
 					<i>Teacher-produced screencasts help my students make progress regardless of where I am physically located. I can be a few feet or a few hundred miles away from the classroom and still have an impact on the learning taking place. I like to call it "outsource yourself to yourself" since only you can make the best clone of yourself for every student!</i>
 				</div>
-				<div class="media">
-				    <iframe width="640" height="360" src="//www.youtube.com/embed/RYnRxxgjA30" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div id="frame5"></div>
+				<div id="player5"></div>
 			</div>
 		</article>
                 <article class="post">
@@ -106,10 +98,7 @@
 				    <h2>From the creator:</h2>
 				    <i>Using videos gives students more independence in lab and allows them to optimize the time they have available.  The video may give details about the lab challenge and/or instruction on how to use unfamiliar equipment. They can refer back to it as needed while performing the lab instead of having to wait for me to make it to their station to answer questions.</i>
 				</div>
-				<div class="media">
-				    <iframe width="640" height="480" src="//www.youtube.com/embed/EqPQXpTJumQ?rel=0" frameborder="0" allowfullscreen></iframe>
-				</div>
-				<div id="frame6"></div>
+				<div id="player6"></div>
 			</div>
 		</article>
             </div>
@@ -117,13 +106,37 @@
 		<i>Scroll up and down on a computer to navigate, swipe on a touch device.</i>
 	    </div>
         <script>	    
+	var playerInfoList = [
+			      {id:'player',videoId:'5mOl4Q0_JBo'},
+			      {id:'player3',videoId:'JdFou87ty6I'},
+			      {id:'player4',videoId:'3djvdn6hGYI'},
+			      {id:'player5',videoId:'RYnRxxgjA30'},
+			      {id:'player6',videoId:'EqPQXpTJumQ'}
+	];
+	
+	function onYouTubeIframeAPIReady() {
+	    if (typeof playerInfoList === 'undefined') {
+		return;
+	    }
+	    for(var i = 0; i < playerInfoList.length;i++) {
+		var curplayer = createPlayer(playerInfoList[i]);
+	    }
+	}
+	function createPlayer(playerInfo) {
+	    return new YT.Player(playerInfo.id, {
+		videoId: playerInfo.videoId
+	    });
+	}
 	
 	// Initialize the YouTube API for video player control
-	function onYouTubeIframeAPIReady() {
-	    player = new YT.Player('player2',{
-		videoId: 'JdFou87ty6I'}
-	    )
-	}
+	/*function onYouTubeIframeAPIReady() {
+	    player = new YT.Player('player',{
+		videoId: '5mOl4Q0_JBo'
+	    });
+	    player2 = new YT.Player('player2',{
+		videoId: 'JdFou87ty6I'
+	    })
+	}*/
 	
 	// Lines up block text for the title based on the container width
 	// Sourced from https://github.com/zachleat/BigText
@@ -145,12 +158,12 @@
 	
 	// Controls display of content block and scrolling
 	$(".title").click(function() {
-		var clickedPost = $(this).parent();
-		$('.post').not($(this).parent()).removeClass('active');
-		clickedPost.toggleClass('active', 500);
-		if (clickedPost.hasClass('active')) {
-		    player.pauseVideo();
-		}
+	    var clickedPost = $(this).parent();
+	    $('.post').not($(this).parent()).removeClass('active');
+	    clickedPost.toggleClass('active', 500);
+	    if (clickedPost.hasClass('active')) {
+		player.playVideo();
+	    }
 	});
 	
 	// Show the navigation tooltip when scrolled all the way to the left
