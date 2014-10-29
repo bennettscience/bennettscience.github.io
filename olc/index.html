@@ -32,7 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<iframe id="player1" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?enablejsapi=1?rel=0&amp;wmode=transparent&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>
+				<div id="player1"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -147,7 +147,7 @@
 	}
 	
 	function onYouTubePlayerAPIReady() {YT_ready(true)}
-	/*// Set up YouTube video array
+	// Set up YouTube video array
 	// All videos to include on the page
 	// Each player needs a unique video ID for the API to work correctly
 	var playerInfoList = [
@@ -200,11 +200,11 @@
 	    var clickedPost = $(this).parent();
 	    $('.post').not($(this).parent()).removeClass('active');
 	    clickedPost.toggleClass('active', 500);
-	    /*if (clickedPost.hasClass('active')) {
+	    if (clickedPost.hasClass('active')) {
 		player.pauseVideo();
 	    } else {
 		player.playVideo();
-	    }*/
+	    }
 	    //playMedia();
 	});
 	
