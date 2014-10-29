@@ -1,6 +1,6 @@
 <!doctype html>
     <head>
-        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="https://www.youtube.com/player_api"></script>
         <style>
             html, body {
                 height:100%;
@@ -10,8 +10,8 @@
                 overflow:hidden;
             }
             #player {
-                height:100%;
-                width:100%;
+                height:90%;
+                width:90%;
             }
         </style>
     </head>
@@ -19,11 +19,12 @@
         <div id="player"></div>
         <script>
             var player;
-            function onYouTubeIframeAPIReady() {
+            function onYouTubePlayerAPIReady() {
                 player = new YT.Player('player', {
                     playerVars: {
                         listType: 'playlist',
                         list: 'PLrkFX7wG1xoITmRdACH-1lXZk_7ahxCgw',
+                        enablejsapi:1,
                         cc_load_policy:1,
                         autoplay:1,
                         loop:1
