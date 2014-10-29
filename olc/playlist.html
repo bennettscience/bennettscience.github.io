@@ -10,8 +10,8 @@
                 overflow:hidden;
             }
             #player {
-                height:90%;
-                width:90%;
+                height:100%;
+                width:100%;
             }
         </style>
     </head>
@@ -37,6 +37,7 @@
             
             function onPlayerReady(event) {
                 event.target.setVolume(0);
+                event.target.setPlaybackQuality('hd1080');
             }
         </script>
     </body>
