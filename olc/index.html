@@ -8,7 +8,7 @@
 <!doctype html>
     <head>
 	<title>Don't Be a Faceless Robot</title>
-	<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+	<script type="text/javascript" src="https://www.youtube.com/iframe_api" async></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/jquery.mousewheel.js"></script>
         <script src="js/bigtext.js"></script>
@@ -32,7 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<div id="player1"></div>
+				<div id="player"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -106,8 +106,18 @@
 		<i>Scroll up and down on a computer to navigate, swipe on a touch device.</i>
 	    </div>
         <script>
-	// Array of all videos to include on the page
-	var playerInfoList = [
+	// Lines up text for the title based on the container width
+	// Source https://github.com/zachleat/BigText
+        $('#headline').bigtext();
+	
+	// Fixed background on mobile
+	// Source http://srobbin.com/jquery-plugins/backstretch/
+	$.backstretch('robots.png');
+	
+	// Set up YouTube video array
+	// All videos to include on the page
+	// Each player needs a unique video ID for the API to work correctly
+	/*var playerInfoList = [
 			      {id:'player1',videoId:'5mOl4Q0_JBo'},
 			      {id:'player2',videoId:'VOID'},
 			      {id:'player3',videoId:'JdFou87ty6I'},
@@ -117,6 +127,7 @@
 	];
 	
 	// Check for information stored in the array
+	// If there is no valid video data, stop the script
 	function onYouTubeIframeAPIReady() {
 	    if (typeof playerInfoList === 'undefined') {
 		return;
@@ -131,15 +142,14 @@
 	    return new YT.Player(playerInfo.id, {
 		videoId: playerInfo.videoId
 	    });
+	} */
+	
+	var player;
+	function onYouTubeIframeAPIReady() {
+	    player = new YT.Player('player', {
+		videoId: '5mOl4Q0_JBo'
+	    })
 	}
-	
-	// Lines up block text for the title based on the container width
-	// Sourced from https://github.com/zachleat/BigText
-        $('#headline').bigtext();
-	
-	// Allows for fixed background images on iOS7+
-	// Sourced from http://srobbin.com/jquery-plugins/backstretch/
-	$.backstretch('robots.png');
 
 	// Wraps HTML elements in a table row layout for horizontal scrolling
 	$(document).ready(function() {
@@ -156,15 +166,15 @@
 	    var clickedPost = $(this).parent();
 	    $('.post').not($(this).parent()).removeClass('active');
 	    clickedPost.toggleClass('active', 500);
-	    playMedia();
+	    if (clickedPost.hasClass('active')) {
+		player.pauseVideo();
+	    }
 	});
 	
-	function playMedia() {
-	    var videoId = playerInfoList.id;
-	    var el = $('#player' + id);
-	    console.log(id);
-	    //if (el.size() == 0) {}
-	}
+	/*function playMedia() {
+	    var playerId = $(".post.active > iframe").attr('id');
+	    console.log(playerId);
+	}*/
 	
 	// Show the navigation tooltip when scrolled all the way to the left
 	// Automatically hides once the user begins scrolling
@@ -175,7 +185,6 @@
 		$(".tooltip").fadeIn();
 	    }
 	})
-	
         </script>
     </body>
 </html>'
