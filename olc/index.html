@@ -8,12 +8,12 @@
 <!doctype html>
     <head>
 	<title>Don't Be a Faceless Robot</title>
-	<script type="text/javascript" src="https://www.youtube.com/iframe_api" async></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/jquery.mousewheel.js"></script>
         <script src="js/bigtext.js"></script>
 	<script src="js/backstretch.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
 	<link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
@@ -32,7 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<div id="player"></div>
+				<div id="player1"></div>
 			</div>
                 </article>
                 <article class="post">
@@ -114,10 +114,10 @@
 	// Source http://srobbin.com/jquery-plugins/backstretch/
 	$.backstretch('robots.png');
 	
-	// Set up YouTube video array
+	/*// Set up YouTube video array
 	// All videos to include on the page
 	// Each player needs a unique video ID for the API to work correctly
-	/*var playerInfoList = [
+	var playerInfoList = [
 			      {id:'player1',videoId:'5mOl4Q0_JBo'},
 			      {id:'player2',videoId:'VOID'},
 			      {id:'player3',videoId:'JdFou87ty6I'},
@@ -142,11 +142,11 @@
 	    return new YT.Player(playerInfo.id, {
 		videoId: playerInfo.videoId
 	    });
-	} */
+	}*/
 	
 	var player;
 	function onYouTubeIframeAPIReady() {
-	    player = new YT.Player('player', {
+	    player = new YT.Player('player1', {
 		videoId: '5mOl4Q0_JBo'
 	    })
 	}
@@ -168,13 +168,20 @@
 	    clickedPost.toggleClass('active', 500);
 	    if (clickedPost.hasClass('active')) {
 		player.pauseVideo();
+	    } else {
+		player.playVideo();
 	    }
+	    //playMedia();
 	});
 	
-	/*function playMedia() {
+	/* function playMedia() {
+	    // Set the ID of the controller to target
 	    var playerId = $(".post.active > iframe").attr('id');
-	    console.log(playerId);
-	}*/
+	    console.log(playerId);  // returns undefined
+	    if ($('.title').parent().hasClass('active')) {
+		playerId.playVideo();
+	    }
+	} */
 	
 	// Show the navigation tooltip when scrolled all the way to the left
 	// Automatically hides once the user begins scrolling
