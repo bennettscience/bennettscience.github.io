@@ -24,19 +24,20 @@
                     playerVars: {
                         listType: 'playlist',
                         list: 'PLrkFX7wG1xoITmRdACH-1lXZk_7ahxCgw',
-                        autoplay:'1',
-                        volume:'0',
-                        loop:'1',
-                        cc_load_policy:'1'
+                        version:3,
+                        autoplay:1,
+                        loop:1,
+                        cc_load_policy:1
                     },
                     events: {
                         'onReady': onPlayerReady,
+                        'setVolume':0,
                     }
                 });
             }
             
             function onPlayerReady(event) {
-                event.target.playVideo();
+                event.target.playVideo().mute();
             }
         </script>
     </body>
