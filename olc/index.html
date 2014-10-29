@@ -32,7 +32,7 @@
 					<h2>From the creator:</h2>
 					<i>My students usually watched the videos on small netbook screens or on their phones. Zooms help show the video content (especially the writing) clearly, even on small screens. It also adds some transitional cues which help break the video up. It also led me to create more interesting animations in other lessons.</i>
 				</div>
-				<div id="player1"></div>
+				<iframe id="player1" width="640" height="480" src="http://www.youtube.com/embed/5mOl4Q0_JBo?enablejsapi=1?rel=0&amp;wmode=transparent&amp;autoplay=0" frameborder="0" allowfullscreen></iframe>
 			</div>
                 </article>
                 <article class="post">
@@ -73,6 +73,7 @@
 					<h2>From the creator:</h2>
 					<i>I use videos so people can see and hear the human side of the tech department, because I want teachers to develop a connection with me, not a user manual, and so I can model the type of digital media creation I want my teachers to explore.</i>
 				</div>
+				<iframe id="player4" width="640" height="360" src="http//www.youtube.com/embed/JdFou87ty6I?rel=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
 				<div id="player4"></div>
 			</div>
                 </article>
@@ -114,6 +115,38 @@
 	// Source http://srobbin.com/jquery-plugins/backstretch/
 	$.backstretch('robots.png');
 	
+	var players = {};
+	
+	var YT_ready = (function() {
+	    $(".title > iframe[id]").each(function() {
+		var identifier = this.id;
+		console.log(identifier);
+		var frameID = getFrameID(identifier);
+		if (frameID) {
+		    players[frameID] = new YT.Player(frameID, {
+			events: {
+			    "onReady": crateYTEvent(frameID, identifier)
+			}
+		    });
+		    console.log(frameID);
+		}
+	    });
+	});
+	
+	function createYTEvent(frameID, identifier) {
+	    return function (event) {
+		var player = players[frameID];
+		var the_div = $('#'+identifier).parent();
+		the_div.chidren('.title').click(function() {
+		    var $this = $(this);
+		    if (the_div.hasClass('active')) {
+			player.playVideo();
+		    }
+		});
+	    }
+	}
+	
+	function onYouTubePlayerAPIReady() {YT_ready(true)}
 	/*// Set up YouTube video array
 	// All videos to include on the page
 	// Each player needs a unique video ID for the API to work correctly
@@ -138,18 +171,19 @@
 	}
 	
 	// If there is data stored, create a new YouTube player with the API and stored data
+	var player;
 	function createPlayer(playerInfo) {
 	    return new YT.Player(playerInfo.id, {
 		videoId: playerInfo.videoId
 	    });
-	}*/
+	}
 	
-	var player;
-	function onYouTubeIframeAPIReady() {
+	
+	/*function onYouTubeIframeAPIReady() {
 	    player = new YT.Player('player1', {
 		videoId: '5mOl4Q0_JBo'
 	    })
-	}
+	}*/
 
 	// Wraps HTML elements in a table row layout for horizontal scrolling
 	$(document).ready(function() {
@@ -166,22 +200,20 @@
 	    var clickedPost = $(this).parent();
 	    $('.post').not($(this).parent()).removeClass('active');
 	    clickedPost.toggleClass('active', 500);
-	    if (clickedPost.hasClass('active')) {
+	    /*if (clickedPost.hasClass('active')) {
 		player.pauseVideo();
 	    } else {
 		player.playVideo();
-	    }
+	    }*/
 	    //playMedia();
 	});
 	
-	/* function playMedia() {
+	/*function playMedia() {
 	    // Set the ID of the controller to target
-	    var playerId = $(".post.active > iframe").attr('id');
-	    console.log(playerId);  // returns undefined
 	    if ($('.title').parent().hasClass('active')) {
-		playerId.playVideo();
+		player.pauseVideo();
 	    }
-	} */
+	}*/
 	
 	// Show the navigation tooltip when scrolled all the way to the left
 	// Automatically hides once the user begins scrolling
