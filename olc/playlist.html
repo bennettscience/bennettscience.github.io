@@ -1,6 +1,6 @@
 <!doctype html>
     <head>
-        <script src="http://www.youtube.com/iframe_api"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
         <style>
             html, body {
                 height:100%;
@@ -9,35 +9,33 @@
                 padding:0;
                 overflow:hidden;
             }
-            #ytplayer {
-                height:80%;
-                width:80%;
+            #player {
+                height:100%;
+                width:100%;
             }
         </style>
     </head>
     <body>
-        <div id="ytplayer"></div>
+        <div id="player"></div>
         <script>
             var player;
-            function onYouTubePlayerAPIReady() {
-                player = new YT.Player('ytplayer', {
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
                     playerVars: {
                         listType: 'playlist',
                         list: 'PLrkFX7wG1xoITmRdACH-1lXZk_7ahxCgw',
-                        version:3,
+                        cc_load_policy:1,
                         autoplay:1,
-                        loop:1,
-                        cc_load_policy:1
+                        loop:1
                     },
                     events: {
                         'onReady': onPlayerReady,
-                        'setVolume':0,
                     }
                 });
             }
             
             function onPlayerReady(event) {
-                event.target.playVideo().mute();
+                event.target.setVolume(0);
             }
         </script>
     </body>
