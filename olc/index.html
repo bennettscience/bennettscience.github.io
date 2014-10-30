@@ -43,7 +43,7 @@
 					<p>It takes a lot of time, right?</p>
 					<p>Video can be used to give direct feedback to the student because it communicates areas of improvement more effectively than written feedback alone.</p>
 					<h2>From the creator:</h2>
-					<i style="display:none;">GET INFO FROM APRIL</i>
+					<i>Giving feedback on writing isn't easy to do in snippets on the margins. I need to sit down and conference with my students, but I don't always have time to do that in class. Recording a short video lets me elaborate on feedback in addition to leaving notes. An added bonus is that students can listen to the feedback multiple times during the revision process.</i>
 				</div>
 				<div class="media">
 				    <iframe class="tscplayer_inline embeddedObject" name="tsc_player" scrolling="no" frameborder="0" type="text/html" style="overflow:hidden;" src="http://www.screencast.com/users/TechSmithEDU/folders/Video Examples/media/83e269cf-029a-469d-aafe-4074c54905ad/embed" height="446" width="640" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
@@ -190,22 +190,9 @@
 	// Controls display of content block and scrolling
 	$(".title").click(function() {
 	    var clickedPost = $(this).parent();
-	    $('.post').not($(this).parent()).removeClass('active');
+	    //$('.post').not($(this).parent()).removeClass('active');
 	    clickedPost.toggleClass('active', 500);
-	    if (clickedPost.hasClass('active')) {
-		player.pauseVideo();
-	    } else {
-		player.playVideo();
-	    }
-	    //playMedia();
 	});
-	
-	/*function playMedia() {
-	    // Set the ID of the controller to target
-	    if ($('.title').parent().hasClass('active')) {
-		player.pauseVideo();
-	    }
-	}*/
 	
 	// Show the navigation tooltip when scrolled all the way to the left
 	// Automatically hides once the user begins scrolling
