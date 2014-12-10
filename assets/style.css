@@ -473,6 +473,7 @@ article {
 }
 .post {
   height: 215px;
+  box-shadow: 0 0 10px;
 }
 .post#about {
   margin-bottom:10px;
