@@ -12,3 +12,5 @@ All content in this repo is under a [MIT License](http://opensource.org/licenses
 [Online Learning Consortium 2014 Annual Conference - Usability Testing](http://bennettscience.github.io/usability)
 
 [STEMtech 2014 Annual Conference - Reducing Cognitive Load with Video](http://bennettscience.github.io/cognitive)
+
+[ParkerHouse Remodeling](http://dev.ohheybrian.com/parkerhouse)
