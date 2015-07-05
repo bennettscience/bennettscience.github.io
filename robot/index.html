@@ -10,7 +10,6 @@
 	<title>Don't Be a Faceless Robot</title>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/jquery.mousewheel.js"></script>
-        <script src="js/bigtext.js"></script>
 	<script src="js/backstretch.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
@@ -105,10 +104,15 @@
 	    <div class="tooltip">
 		<i>Scroll up and down on a computer to navigate, swipe on a touch device.</i>
 	    </div>
-        <script>
+	<script src="js/bigtext.js"></script>
+	<script>
 	// Lines up text for the title based on the container width
 	// Source https://github.com/zachleat/BigText
-        $('#headline').bigtext();
+
+	    var bt = BigText.noConflict(true);
+	    $.fn.bt = bt.jQueryMethod;
+	    
+	$('#headline').bt();
 	
 	// Fixed background on mobile
 	// Source http://srobbin.com/jquery-plugins/backstretch/
