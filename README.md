@@ -1,7 +1,7 @@
-Current Projects
+Projects
 ========================
 
-This hosts presentations and other sessions I run. Rather than locking content in slides, websites can be accessed equally from most devices.
+A list of development projects - large and small.
 
 All content in this repo is under a [MIT License](http://opensource.org/licenses/MIT) unless otherwise marked in the project.
 
@@ -14,3 +14,9 @@ All content in this repo is under a [MIT License](http://opensource.org/licenses
 [STEMtech 2014 Annual Conference - Reducing Cognitive Load with Video](http://bennettscience.github.io/cognitive)
 
 [ParkerHouse Remodeling](http://dev.ohheybrian.com/parkerhouse)
+
+2015
+===
+[Bushwick child theme for WordPress](https://github.com/bennettscience/bushwick-child)
+
+[writespace for WordPress](https://github.com/bennettscience/writespace)
