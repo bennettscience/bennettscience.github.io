@@ -7,7 +7,7 @@
         margin: 0;
         padding: 0;
       }
-      #text, #interact {
+      #text, #interact, #prompt {
         width:50%;
         margin:0 auto;
       }
@@ -16,12 +16,5 @@
   </head>
   <body>
     <div id="text"></div>
-    <div id="prompt">
-      <p>Do you want to download the text?</p>
-    </div>
-    <div id="interact">
-      <button type="button" id="createText" value="Download Now" onclick="getPlainText()">Download Selection</button>
-      <a id="download" download="text.txt"></a>
-    </div>
-  </body>
+    <div id="prompt"><p>Do you want to download the text?</p></div><div id="interact"><button type="button" id="createText" value="Download Now" onclick="getPlainText()">Download Selection</button><a id="download" download="text.txt"></a></div></body>
 </html>
