@@ -1,4 +1,5 @@
 function makePage(text) {
+  var text = "";
   if(typeof window.getSelection != "undefined") {
     text = window.getSelection().toString();
 
@@ -10,14 +11,10 @@ function makePage(text) {
 }
 
 function getPlainText() {
-  var text = "";
-  if(typeof window.getSelection != "undefined") {
-    text = window.getSelection().toString();
-
-    var download = document.getElementById('download');
-    download.href = 'data:text/plain;charset:utf-8,' + encodeURIComponent(text);
-    var event = new MouseEvent('click');
-    download.dispatchEvent(event);
-  }
-  return text;
+  var copy = window.getElementById('copy').innerText;
+  var download = document.getElementById('download');
+  download.href = 'data:text/plain;charset:utf-8,' + encodeURIComponent(copy);
+  var event = new MouseEvent('click');
+  download.dispatchEvent(event);
+  return;
 }
