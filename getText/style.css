@@ -2,7 +2,11 @@ html, body {
   margin:0;
   padding:0;
 }
-#text, #interact {
+#text {
+  font-family:monospace;
+  font-size:18px;
+}
+#copy, #interact {
   font-family:Helvetica,Arial,sans-serif;
   width:50%;
   margin:20px auto;
@@ -15,4 +19,61 @@ html, body {
   padding:3px 10px;
   color:#fff;
   text-decoration: none;
+}
+
+/* blinking cursor lifted from CodePen by Artem Gordinsky */
+/* http://codepen.io/ArtemGordinsky/pen/GnLBq/ */
+.blinking-cursor {
+  font-weight: 300;
+  font-size: 18px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+}
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
 }
