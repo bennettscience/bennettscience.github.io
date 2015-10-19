@@ -1,28 +1,20 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <style media="screen">
-      html, body {
-        margin: 0;
-        padding: 0;
-      }
-      #copy, #interact, #prompt {
-        width:50%;
-        margin:0 auto;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="http://rawgit.com/bennettscience/bennettscience.github.io/master/getText/style.css" />
     <title></title>
   </head>
   <body>
-    <div id="copy">
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+    <div id="text">
+      <h1>PlainText Downloader</h1>
+      <section>
+        <p>Getting the content of a webpage as plaintext isn't easy to do. It requires finding an article, copying the text, opening a text editor, pasting, and then saving the new document.</p>
+        <p>This bookmarklet allows you to highlight text and download a plaintext file with one click.</p>
+      </section>
+      <section>
+        <p>To use the downloader, drag this <a id="button" href='javascript:(function()%7Bfunction makePage(a)%7B"undefined"!%3Dtypeof window.getSelection%26%26(a%3Dwindow.getSelection().toString(),window.open("",null,"height%3D200,width%3D300,status%3Dyes,menubar%3Dno").document.write("<head><link rel%3D%27stylesheet%27 type%3D%27text/css%27 href%3D%27http://rawgit.com/bennettscience/bennettscience.github.io/gh-pages/getText/style.css%27/><script type%3D%27text/javascript%27src%3D%27https://rawgit.com/bennettscience/bennettscience.github.io/gh-pages/getText/script.js%27>%5Cx3c/script></head><body><a id%3D%27download%27 download%3D%27text.txt%27></a><div id%3D%27copy%27><p>"%2Ba%2B"</p></div><div id%3D%27interact%27><button id%3D%27download%27 onclick%3D%27getPlainText()%27>Download</button></div></body></html>"),console.log(a))%7DmakePage()%3B%7D)()%3B'>PlainText</a> button to your bookmarks bar.</p>
+      </section>
     </div>
-    <div id="interact">
-      <button type="button" value="Download Now" onclick="getPlainText()">Download Selection</button>
-      <button type="button" id="makePage" value="get text" onclick="makePage()">Make page</button>
-      <a id="download" download="text.txt"></a>
-    </div>
-    <script src='https://rawgit.com/bennettscience/bennettscience.github.io/gh-pages/getText/script.js' type="text/javascript"></script>
   </body>
 </html>
