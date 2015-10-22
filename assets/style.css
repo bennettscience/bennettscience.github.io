@@ -1,6 +1,6 @@
 /*
 dev.ohheybrian.com
-Brian E. Bennett - 2014
+Brian E. Bennett - 2015
 Fork at http://bennettscience.github.io
 License: GNU General Public License
 
@@ -8,7 +8,7 @@ License: GNU General Public License
 /* ----------------------------------------------------------- */
 /* Reset
 -------------------------------------------------------------- */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -280,7 +280,10 @@ textarea {
 
   height:65px;
 }
-/* ------------------------- STYLES ------------------------------------- */
+/*
+/* PAGE STYLES
+*/
+
 body,
 button,
 input,
@@ -295,365 +298,22 @@ select {
   height:100%;
 }
 
-/* -------------------------- TYPOGRAPHY ------------------------------------ */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  clear: both;
-  font-family: "Arvo", Georgia, serif;
-}
-h1 {
-  line-height: 71.03999999999999px;
-  font-size: 48px;
-  font-size: 4.8rem;
-}
-h2 {
-  line-height: 50.32px;
-  font-size: 34px;
-  font-size: 3.4rem;
-}
-h3 {
-  line-height: 41.44px;
-  font-size: 28px;
-  font-size: 2.8rem;
-}
-h4 {
-  line-height: 26.64px;
-  font-size: 18px;
-  font-size: 1.8rem;
-}
-hr {
-    height:0;
-    max-width:250px;
-    margin:1.5em auto;
-    border-top:1px solid rgba(0,0,0,0.1);
-    border-bottom:1px solid rgba(255,255,255,0.3);
-}
-p {
-  margin-bottom: 1.5em;
-}
-ul,
-ol {
-  margin: 0 0 1.5em 3em;
-}
-ul {
-  list-style: none;
-  /* float: left; */
-}
-ol {
-  list-style: decimal;
-}
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-bottom: 0;
-  margin-left: 1.5em;
-}
-li {
-  font-family:'Merriweather',serif;
-  font-weight:300;
-  font-size:18px;
-  font-size:1.8rem;
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin: 0 1.5em 1.5em;
-}
-b,
-strong {
-  font-weight: bold;
-}
-dfn,
-cite,
-em,
-i {
-  font-style: italic;
-}
-blockquote {
-  margin: 0 1.5em;
-}
-address {
-  margin: 0 0 1.5em;
-}
-a {
-  color: #007998;
-  -webkit-transition: color 0.25s ease-in-out;
-  -moz-transition: color 0.25s ease-in-out;
-  -o-transition: color 0.25s ease-in-out;
-  -ms-transition: color 0.25s ease-in-out;
-  transition: color 0.25s ease-in-out;
-  text-decoration: none;
-}
-a:focus,
-a:active {
-  color: rgba(0, 121, 152, 0.5);
-}
-/* ------------ ALIGNMENT ----------- */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
+/*
+/* BODY CONTENT
+*/
+
+#container {
+  width:80%;
+  margin:0 auto;
 }
 
-/* ------ SITE STYLES -------- */
-header {
-  width:100%;
-  height:55px;
-  display:block;
-  
-}
-body {
-  min-height:100%;
-  -webkit-overflow-scrolling: touch;
-  max-width: 80%;
-  margin:0 auto;
-  padding-bottom:30px;
-}
-
-body #primary {
-  margin:0 auto;
+#primary {
   position:relative;
+  width:65%;
+  float:left;
 }
-body #content {
-  height: auto;
-  width: 100%;
-  margin:0 auto;
-}
-#github {
-  display:block;
-    height:35px;
-    float:right;
-    position:relative;
-    top:10px;
-}
-#blog-title {
-  position: absolute;
-  left:10%;
-  top:10px;
-  text-transform:uppercase;
-  font-family: 'Open Sans','Helvetica',sans-serif;
-  color:#404040;
-  font-weight:700;
-}
-#content h1 {
-  font-family:'Merriweather','Helvetica', sans-serif;
-}
-.full {
-  height:100%;
-  width:100%;
-}
-.post{
-  background-position: center center;
-  background-repeat:no-repeat;
-  background-size:cover; 
-}
-
-/* ARTICLE STYLES */
-article {
-  /* background: transparent; */
-  padding:0;
-  display: block;
-  opacity:1;
-  height:100%;
-}
-.post {
-  height: 215px;
-  box-shadow: 0 0 10px;
-}
-.post#about {
-  margin-bottom:10px;
-}
-article .the-content {
-  margin:0 auto;
-  max-width: 80%;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  background:rgba(235,235,235,0.75);
-  padding:10px;
-}
-article .the-content p {
-  color:#404040;
-  line-height:1.25;
-}
-.title {
-  max-width: 80%;
-  margin: 0 auto;
-  font-size: 40px;
-  font-size:4rem;
-  font-weight:700;
-  text-align: center;
-}
-article .title a {
-  text-decoration:none;
-  color: #404040;
-  line-height:1.25;
-  font-family:'Open Sans','Arial',sans-serif;
-  font-weight:800;
-  text-transform:uppercase;
-}
-article .title a:hover {
-  color:#3849A6;
-}
-article .post-snippet {
-  max-width: 80%;
-  position: relative;
-  margin:0 auto;
-  text-align: center;
-}
-article .post-snippet p {
-  font-size:30px;
-  font-size:3rem;
-  font-family:'Open sans','Arial', sans-serif;
-  font-weight:300;
-  text-transform: none;
-  margin:0;
-}
-article .meta {
-  display: block; 
-  max-width:inherit;
-  margin: 0 auto;
-  position: relative;
-  top: 10%;
-  text-align: center;
-}
-article .meta a {
-  color:#404040;
-  font-family:'Merriweather','Helvetica',sans-serif;
-  font-weight:300;
-}
-article .meta ul {
-  margin: 0 !important;
-}
-article .meta p {
-  display:inline;
-  color:#404040;
-  font-family:'Merriweather','Helvetica',sans-serif;
-  font-weight:300;
-  font-size:21px;
-  margin:0;
-}
-.meta {
-  font-size: 14px;
-  text-align: center;
-  width: 100%;
-}
-.meta a {
-  color: #888888;
-  text-decoration: none;
-}
-.post-container {
+#sidebar {
   position:relative;
-  height:auto;
-}
-.featured {
-  height:350px;
-  width:100%;
-  background-size:cover;
-  background-repeat:no-repeat;
-  background-position:center center;
-  position: relative;
-  margin-bottom:1.5em;
-}
-.featured#about {
-  background-image:url('https://farm4.staticflickr.com/3936/15274102588_52b9776eab_o.png');
-}
-.featured#connect {
-  background-image:url('https://farm8.staticflickr.com/7236/7032996363_58ffef4321_o.jpg');
-}
-.featured .title {
-  max-width:80%;
-  position: relative;
-  top:50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  background:rgba(235,235,235,0.5);
-  padding:10px 3px;
-}
-.featured .title h1 {
-  text-decoration:none;
-  color: #404040;
-  line-height:1.25;
-  font-family:'Open Sans','Arial',sans-serif;
-  font-weight:800;
-  text-transform:uppercase;
-}
-.the-post {
-  width:100%;
-  background: #fff;
-  height:auto;
-}
-.the-post .content-container {
-  max-width:80%
-  margin:0 auto;
-  padding:0 10px;
-  height: inherit;
-}
-.the-post .content-container p {
-  font-family:'Merriweather', sans-serif;
-  font-size:18px;
-  font-size: 1.8rem;
-  font-weight:300;
-  color:#000;
-}
-.footer img {
-  height:35px;
-  width:auto;
-}
-.footer img:hover {
-  bottom:20px;
-}
-
-/* ----- MEDIA QUERIES ---------- */
-@media screen and (max-width: 768px) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
-  article {
-    opacity:1;
-    height:auto;
-  }
-  article .title {
-    position: relative;
-  }
-  article .title a {
-    font-size:2.9rem;
-    font-size:29px;
-  }
-  article .post a {
-  text-decoration:none;
-  color: #3849A6 !important;
-  line-height:1.25;
-  font-family:'Open Sans',sans-serif;
-  font-weight:800;
-  text-transform:uppercase;
-  }
-  article .post-snippet p {
-    font-size: 2.1rem;
-    font-size: 21px;
-  }
-  .post-container .featured .title {
-    width:auto;
-    overflow:hidden;
-    font-size:1.8rem;
-  }
+  width:35%;
+  float:right;
 }
