@@ -303,17 +303,24 @@ select {
 */
 
 #container {
-  width:80%;
+  width:70%;
   margin:0 auto;
 }
-
+#header {
+  height:68px;
+  margin:20px 0;
+  border: 1px solid blue;
+}
 #primary {
   position:relative;
-  width:65%;
+  width:62%;
+  margin-right:5%;
   float:left;
+  border: 1px solid black;
 }
 #sidebar {
   position:relative;
-  width:35%;
-  float:right;
+  width:32%;
+  float:left;
+  border:1px solid red;
 }
