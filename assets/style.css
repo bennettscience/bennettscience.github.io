@@ -324,3 +324,49 @@ select {
   float:left;
   border:1px solid red;
 }
+
+/*
+/* LANGUAGE SPANS
+*/
+span {
+  font-size: 11px;
+  font-family:Arial, sans-serif;
+}
+.html {
+  padding:3px 5px;
+  border:1px solid red;
+  border-radius: 3px;
+  background-color:red;
+  color:#fff;
+}
+
+.css {
+  padding:3px 5px;
+  border:1px solid blue;
+  border-radius: 3px;
+  background-color:blue;
+  color:#fff;
+}
+
+.js {
+  padding:3px 5px;
+  border:1px solid yellow;
+  border-radius: 3px;
+  background-color:yellow;
+}
+
+.php {
+  padding:3px 5px;
+  border:1px solid orange;
+  border-radius: 3px;
+  background-color:orange;
+  color:#fff;
+}
+
+.other {
+  padding:3px 5px;
+  border:1px solid green;
+  border-radius: 3px;
+  background-color:green;
+  color:#fff;
+}
