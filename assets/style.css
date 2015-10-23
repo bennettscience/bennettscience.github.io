@@ -301,10 +301,10 @@ select {
 /*
 /* BODY CONTENT
 */
-
 #container {
   width:70%;
   margin:0 auto;
+  line-height:1.25;
 }
 #header {
   height:68px;
@@ -316,7 +316,16 @@ select {
   width:62%;
   margin-right:5%;
   float:left;
-  border: 1px solid black;
+  font-family:Arial, sans-serif;
+}
+#primary a {
+  text-decoration: none;
+}
+#primary a:hover {
+  text-decoration:underline;
+}
+#primary li {
+  margin:0 0 25px 0;
 }
 #sidebar {
   position:relative;
@@ -324,7 +333,11 @@ select {
   float:left;
   border:1px solid red;
 }
-
+.headline {
+  font-family:Arial,sans-serif;
+  font-size:32px;
+  font-weight:900;
+}
 /*
 /* LANGUAGE SPANS
 */
