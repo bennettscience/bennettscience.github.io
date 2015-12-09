@@ -11,7 +11,7 @@ function getPlainText(text) {
     var text = document.getElementById('copy').innerText;
     // console.log(text);
     var download = document.getElementById('download');
-    download.href = 'data:text/plain;charset:us-ascii,' + unescape(encodeURIComponent(text));
+    download.href = 'data:text/plain;charset:us-ascii,' + escape(encodeURIComponent(text));
     var event = new MouseEvent('click');
     download.dispatchEvent(event);
   return text;
