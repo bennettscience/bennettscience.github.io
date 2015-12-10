@@ -1,16 +1,8 @@
-// function encodeText(text) {
-//   var text = document.getElementById('copy').innerText;
-//   var download = document.getElementById('download');
-//   download.href = decodeURIComponent(escape(text));
-//   console.log(text);
-//   return text;
-// }
-
-
 function getPlainText(text) {
     var text = document.getElementById('copy').innerText;
     // console.log(text);
 
+    //Conversion script from http://lithium.homenet.org/~shanq/bitsnbytes/native2ascii_en.html
     var out = "";
     for (var i=0;i<text.length;i++) {
       if(text.charCodeAt(i) < 0x80) {
