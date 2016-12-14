@@ -290,9 +290,6 @@ input,
 select {
   padding: 0;
   margin: 0;
-  background: #ffffff;
-  font-family: serif;
-  line-height: 30px;
   font-size: 24px;
   font-size: 1.8rem;
   height:100%;
@@ -301,20 +298,27 @@ select {
 /*
 /* BODY CONTENT
 */
+body {
+  font-family:sans-serif;
+}
+h1 {
+  font-size:48px;
+  font-weight:800;
+}
+h2 {
+  font-size:32px;
+  font-weight:700;
+}
 #container {
-  width:70%;
+  width:90%;
   margin:0 auto;
   line-height:1.25;
 }
-#header {
-  height:68px;
-  margin:20px 0;
-  border: 1px solid blue;
-}
+
 #primary {
   position:relative;
-  width:62%;
-  margin-right:5%;
+  width:45%;
+  margin:55px 5%;
   float:left;
   font-family:Arial, sans-serif;
 }
@@ -327,11 +331,21 @@ select {
 #primary li {
   margin:0 0 25px 0;
 }
+.desc a {
+  text-decoration:underline !important;
+  color:blue;
+}
 #sidebar {
-  position:relative;
-  width:32%;
-  float:left;
-  border:1px solid red;
+  position:fixed;
+  top:55px;
+  right:10%;
+  width:25%;
+  /*border:1px solid red;*/
+  font-family:sans-serif;
+}
+
+#sidebar a {
+  margin-right:10px;
 }
 .headline {
   font-family:Arial,sans-serif;
@@ -344,42 +358,27 @@ select {
 span {
   font-size: 11px;
   font-family:Arial, sans-serif;
-}
-.html {
   padding:3px 5px;
-  border:1px solid red;
-  border-radius: 3px;
-  background-color:red;
+  border-radius:3px;
   color:#fff;
 }
 
-.css {
-  padding:3px 5px;
-  border:1px solid blue;
-  border-radius: 3px;
+.html {
   background-color:blue;
-  color:#fff;
+}
+
+.gas {
+  background-color:green;
 }
 
 .js {
-  padding:3px 5px;
-  border:1px solid yellow;
-  border-radius: 3px;
-  background-color:yellow;
+  background-color:purple;
 }
 
 .php {
-  padding:3px 5px;
-  border:1px solid orange;
-  border-radius: 3px;
   background-color:orange;
-  color:#fff;
 }
 
 .other {
-  padding:3px 5px;
-  border:1px solid green;
-  border-radius: 3px;
-  background-color:green;
-  color:#fff;
+  background-color:red;
 }
